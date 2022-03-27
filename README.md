@@ -6,9 +6,9 @@
 ```
 #### [![platzibadges](https://vercel.com/button)](https://rroderickk.github.io/platzibadges)
 
-
-![sc1]()
-
-![sc2]()
-
-![sc3]()
+![sc1](./screenshots/sc1.png)
+![sc2](./screenshots/sc2.png)
+![sc3](./screenshots/sc3.png)
+![sc4](./screenshots/sc4.png)
+![sc5](./screenshots/sc5.png)
+![sc6](./screenshots/sc6.png)
