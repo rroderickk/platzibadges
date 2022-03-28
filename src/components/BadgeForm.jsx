@@ -6,7 +6,6 @@ import {
 import { Gravatar} from "../utils/Gravatar"
 import { dataset } from "../components/dataset"
 
-const handleSubmit =e=> { e.preventDefault(); return handleAction(); };
 const pushItem =(form)=> {
   dataset.unshift({
     ...form,
@@ -14,10 +13,11 @@ const pushItem =(form)=> {
     avatar: Gravatar(form.email),
   });
 }
-const handleAction =()=> <form action="https://formsubmit.co/6cbbe635bf23e284172e27f0b5960dd0" method="POST" />
 
-const BadgeForm =(props)=> { return (<>
+const BadgeForm =(props)=> { 
+  const handleSubmit =e=> { e.preventDefault(); return setTimeout(()=>{props.handleSend()},1000)};
 
+return (<>
 <form style={{
     position: "relative", 
     top: "-270px", alignItems: "center"
@@ -102,7 +102,7 @@ const BadgeForm =(props)=> { return (<>
         <Button 
           type="submit"
           colorScheme='green' mt='24px'
-          onClick={()=>pushItem(props.formValues)}
+          onClick={()=>{pushItem(props.formValues); }}
         >
           PRINT YOUR BADGE
         </Button>
@@ -111,3 +111,4 @@ const BadgeForm =(props)=> { return (<>
 </form>
 
 </> ) }; export {BadgeForm};
+

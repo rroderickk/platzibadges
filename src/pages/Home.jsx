@@ -1,11 +1,10 @@
 import   React from "react";
-import   styled from "styled-components"
-import { FadeIn } from "../GlobalStyle";
 import { Layout } from "../containers/Layout";
 import { AnimationComponent } from "../components/AnimationComponent";
 import { RandomNumber as random} from "../Lib/RandomNumbers";
 import { BadgeForm } from "../components/BadgeForm";
 import { Badge } from "../components/Badge";
+import { Form,handleSend } from "../components/Form"
 
 import fondo from "@logos/stars.svg"
 
@@ -42,6 +41,7 @@ return ( <>
         marginTop: "30px",
       }} 
     >
+      {Form(state.form)}
       <AnimationComponent {...{scale: random(9,4), duration: random(2,1) }}>
         <img src={fondo} alt="fondo-estrellas" /> 
       </AnimationComponent>
@@ -49,6 +49,7 @@ return ( <>
       <BadgeForm
         onChange={handleChange}
         formValues={state.form}
+        handleSend={handleSend}
       />
 
       <Badge
@@ -59,8 +60,3 @@ return ( <>
   </Layout>
 
 </> ) }; export { Home };
-
-//// const Div = styled.div`
-//// outline: 1px solid red;
-////   ${FadeIn()}
-//// `
